@@ -1,0 +1,36 @@
+$menu-width: 3em;
+$menu-margin-btm: $menu-width/5;
+$hover-color: #e67e22;
+$dx: $menu-margin-btm; // Offset the rotation by its line height
+
+#toggle-menu {
+  overflow: hidden;
+  width: $menu-width;
+
+  .line {
+    display: block;
+    transition: background .2s linear;
+    width: $menu-width;
+    height: $menu-margin-btm;
+    margin-bottom: $menu-margin-btm;
+    transition: transform .2s ease-in-out, background .3s ease;
+  }
+
+  &:hover .line, &.is-menu-open:hover .line {
+    background: $hover-color;
+  }
+
+  &.is-menu-open {
+    #line-1 {
+      transform: rotate(45deg) translateX(2*$dx);
+      transform-origin: $dx (-$dx);
+    }
+    #line-2 {
+      transform: translateX(-100%);
+    }
+    #line-3 {
+      transform: rotate(-45deg) translateX(2*$dx);
+      transform-origin: $dx 2*$dx;
+    }
+  }
+}

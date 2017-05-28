@@ -1,0 +1,364 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms; // @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+// @include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes; // @include foundation-flex-classes;
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import 'components/toggle-menu';
+
+$menu-icon-size: 4rem;
+$menu-icon-color: #fff;
+$menu-link-height: 6.25rem;
+$menu-link-color: #fff;
+$menu-link-border: 1px solid rgba(255,255,255, .5);
+
+$skew-angle: 25deg;
+$selector-height: 15rem;
+$selector-width: $selector-height / 0.4663;
+$selector-item-width: 10rem;
+
+.sub-nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+  }
+
+ .unfix-nav & {
+    bottom: 0;
+    overflow: hidden;
+    height: $selector-height;
+    // transition: all .3s ease-in-out;
+    li {
+
+      width: $selector-item-width;
+      margin: auto 1em;
+      height: 100%;
+      transform: skewX(-$skew-angle);
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: rgba(0, 0, 0, .6);
+
+      span {
+        transition: transform box-shadow background 0.3s cubic-bezier(.25,.8,.25,1);
+        white-space: pre-wrap;
+        /* css-3 */
+        text-decoration: none;
+        color: white;
+        // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: skewX(25deg);
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, .4);
+        box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+
+        span {
+          transform: skewX(25deg) scale(1.2);
+        }
+      }
+    }
+  }
+
+  .fix-nav & {
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    max-width: 1440px;
+    height: 5rem;
+    // background: rgba(255,255,255,.95);
+    background: #000;
+    // box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    transition: all .3s ease-in-out;
+    li {
+      height: 100%;
+      width: 10em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+    .tab.current::after {
+          display: block;
+          width: 0;
+          height: 0;
+          margin: 0 auto -15px;
+          content: '';
+          border-right: 15px solid transparent;
+          border-top: 15px solid #000;
+          border-left: 15px solid transparent;
+    }
+  }
+}
+
+#hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background: url("https://static.pexels.com/photos/4097/city-cars-traffic-lights.jpeg") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    .profile {
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0, .5);
+
+      .profile-pic {
+        filter: drop-shadow(2px 2px 5px #000);
+        border-radius: 100%;
+      }
+      .tags {
+          margin-left: 5rem;
+          h1 {
+            border-right: 2px solid orange;
+            overflow: hidden;
+            margin: 0 auto;
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: typing 2s steps(10,end), blink-caret 1.5s step-end infinite;
+            animation-delay: 2s;
+          }
+
+          @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+          }
+
+          @keyframes blink-caret {
+            0% { border-color: transparent; }
+            50% { border-color: orange; }
+            100% { border-color: transparent; }
+          }
+      }
+    }
+}
+
+#content {
+  z-index: 1;
+  position: relative;
+  height: 50vh;
+  background: white;
+  // background: #496a80; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(-179deg, #496a80 , #061728); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(-179deg, #283048 , #859398); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.site-wrapper, footer {
+  width: 100%;
+  max-width: 1440px;
+
+  @include breakpoint(large) {
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+  }
+}
+.site-wrapper {
+  position: relative;
+  overflow: hidden;
+  // height of footer
+  margin: 0 auto 5rem;
+}
+
+footer {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  padding: 40px 0;
+  color: white;
+  background: black;
+  height: 5rem;
+  .sns ul li{
+    display: inline-block;
+    // flex-direction: row;
+  }
+}
+
+.nametag {
+  color: #fff;
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem 3rem;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+    animation: load 1.3s ease-in-out;
+    border-top: 5px solid #fff;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    content: '';
+    animation: load 1.3s ease-in-out;
+    border-top: 5px solid #fff;
+  }
+
+  @keyframes load {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+.overlay {
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+header[role="navigation"] {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5em;
+  max-width: 1440px;
+
+  .overlay-menu {
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    transition: all 100ms ease-in-out;
+    text-align: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .95);
+    background-size: cover;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+
+    li {
+      font-size: 3rem;
+      a {
+        display: block;
+        height: $menu-link-height;
+        text-decoration: none;
+        color: $menu-link-color;
+        font-weight: bold;
+        line-height: 6.25rem;
+        &:hover {
+          color: #e67e22;
+        }
+      }
+    }
+  }
+
+  .toggle-menu {
+    display: block;
+    z-index: 12;
+    position: absolute;
+    top: 1em;
+    right: 3em;
+    .line {
+      background: #fff;
+      // .fix-nav & {
+      //   background: #000;
+      // }
+    }
+    .fix-nav &.is-menu-open .line, .unfix-nav &.is-menu-open .line {
+      background: #fff;
+    }
+  }
+  .is-open {
+    top: 0;
+    margin-right: -100px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.is-overlay-active {
+  overflow: hidden;
+}
+
+.tab-content {
+  position: relative;
+  top: 80px;
+  display: none;
+  &.current {
+    display: inherit;
+  }
+}

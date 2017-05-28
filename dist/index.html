@@ -2,13 +2,21 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-69801111-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
-    <link href="https://fonts.googleapis.com/css?family=Righteous|Amiko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Amiko|Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   </head>
   <body>
@@ -26,7 +34,7 @@
               <li><a href="#">Home</a></li>
               <li><a href="#">About me</a></li>
               <li><a href="#">Resume</a></li>
-              <li><a href="#">Connect with LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/junhong-chen-1b199698/" target="_blank">Connect with LinkedIn</a></li>
               <li><a href="#">Contact</a></li>
           </ul>
           <a id="toggle-menu" class="toggle-menu" href="#menu">
@@ -34,21 +42,15 @@
             <span class="line" id="line-2"></span>
             <span class="line" id="line-3"></span>
           </a>
-          <ul class="sub-nav no-bullet">
-            <li>
-              <a class="skill" href="#business">
-                <span>Business Analysis</span>
-              </a>
+          <ul class="tabs sub-nav no-bullet">
+            <li data-tab="business" class="tab">
+              <span>Business Analysis</span>
             </li>
-            <li>
-              <a class="skill" href="#consulting">
-                <span>Consulting</span>
-              </a>
+            <li data-tab="consulting" class="tab">
+              <span>Consulting</span>
             </li>
-            <li>
-              <a class="skill" href="#IT">
-                <span>Information Technology</span>
-              </a>
+            <li data-tab="IT" class="tab">
+              <span>Information Technology</span>
             </li>
           </ul>
         </header>
@@ -58,60 +60,60 @@
             <img class="profile-pic" src="assets/img/avatar.jpg" width="200px" alt="Junhong Chen">
             <div class="tags">
                 <h1>Hi, My name is Jun.</h1>
-                <sub>Check out my capabilities below :)</sub>
+                <sub>Check out my competencies below :)</sub>
             </div>
           </div>
     
         </section>
         <section id="content">
-          <div id="business" class="is-showing skills-panel">
+          <div id="business" class="current tab-content">
+    
             <article class="row columns medium-6">
-              <h2>Project Management</h2>
-              <p>Having completed IT Project and Change Management with a First Hornours, I have gained insights in managing IT projects, software development cycle, as well as the capability to produce artefacts including reports, gahnt chart and more.</p>
-            </article>
-            <article class="row columns medium-6">
-              <h2>Business Process Modeling</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </article>
-          </div>
-          <div id="consulting" class="skills-panel">
-            <article class="row columns medium-6">
-              <h2>Cloud Solutions</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </article>
-            <article class="row columns medium-6">
-              <h2>Web Development</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <h1>Business Analyst</h1>
+              <hr />
+              <ul>
+                <li>Project Management</li>
+                <li>Business Process Modeling</li>
+              </ul>
             </article>
           </div>
-          <div id="IT" class="skills-panel">
+          <div id="consulting" class="tab-content">
             <article class="row columns medium-6">
-              <h2>Web Development</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <h1>Consulting Services</h1>
+              <hr />
+              <ul>
+                <li>Cloud Computing (AWS, Azure)</li>
+                <li>Enterpise Architecture and Application</li>
+              </ul>
             </article>
+          </div>
+          <div id="IT" class="tab-content">
             <article class="row columns medium-6">
-              <h2>Database/ Data Warehouse</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </article>
-            <article class="row columns medium-6">
-              <h2>Cloud Solutions Architecture</h2>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <h1>Technology</h1>
+              <hr />
+              <ul>
+                <li>Full-Stack Development</li>
+                <li>Database/ Data Warehouse</li>
+                <li>RESTful Web Services</li>
+              </ul>
             </article>
           </div>
         </section>
         <footer id="footer">
           <div class="row">
             <div class="columns small-9">
-              <em>Copyright by Junhong Chen</em>
+              <em>&copy; Junhong Chen 2017</em>
             </div>
-            <ul class="flex-container no-bullet columns small-3">
-              <li>Facebook</li>
-              <li>LinkedIn</li>
-              <li>GitHub</li>
-              <li>Instagram</li>
-              <li>WeChat</li>
-            </ul>
-          </div>
+            <div class="sns columns small-3">
+              <ul class="no-bullet">
+                <li><i class="fa fa-2x fa-codepen" aria-hidden="true"></i></li>
+                <li><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></li>
+                <li><i class="fa fa-2x fa-github" aria-hidden="true"></i></li>
+                <li><i class="fa fa-instagram fa-2x"></i></li>
+                <li><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></li>
+                <li><i class="fa fa-2x fa-wechat" aria-hidden="true"></i></li>
+              </ul>
+            </div>
         </footer>
       </div>
     </body>
